@@ -9,13 +9,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
-}
-
-module "root" {
-  source = "github.com/grocky/infrastructure//modules/root-domain"
-
-  root_domain_name = var.root_domain_name
+  region = var.region
 }
 
 variable "root_domain_name" {
@@ -26,14 +20,36 @@ variable "www_domain_name" {
   default = "www.rockygray.com"
 }
 
-output "s3_website_url" {
-  value = aws_s3_bucket.www.website_endpoint
+variable "region" {
+  default = "us-east-1"
 }
 
-output "cloudfront_url" {
-  value = aws_cloudfront_distribution.www_distribution.domain_name
+module "root" {
+  source = "github.com/grocky/infrastructure//modules/root-domain"
+
+  root_domain_name = var.root_domain_name
 }
 
-output "cloudfront_www_id" {
-  value = aws_cloudfront_distribution.www_distribution.id
+module "email_forwarder" {
+  source    = "github.com/cloudposse/terraform-aws-ses-lambda-forwarder"
+  namespace = "rockygray.com"
+  stage     = "prod"
+  name      = "email"
+  tags = {
+    Env         = "prod"
+    Application = "www.rockygray.com"
+  }
+
+  region      = var.region
+  domain      = "rockygray.com"
+  relay_email = "rocky@rockygray.com"
+  spf         = "v=spf1 include:amazonses.com -all"
+  forward_emails = {
+    "@rockygray.com" = ["rocky.grayjr@gmail.com"]
+  }
+
+  lambda_runtime = var.lambda_runtime
+
+  artifact_url      = var.artifact_url
+  artifact_filename = var.artifact_filename
 }
