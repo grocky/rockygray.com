@@ -1,6 +1,17 @@
 const  LOGO_INTERACTION = 'logo/LOGO_INTERACTION';
 
-const initialState = {
+interface LetterGroups {
+  index: number
+  states: number[]
+  sections: string[][]
+}
+
+export interface LogoState {
+  letterGroups: LetterGroups
+  highlightedSections: string[]
+}
+
+const initialState: LogoState = {
   letterGroups: {
     index: 0,
     states: [1, 0, 1, 2],
@@ -10,23 +21,19 @@ const initialState = {
       ['top'] // j
     ]
   },
+  highlightedSections: [],
 };
 
-interface LetterGroups {
-  index: number
-  states: number[]
-  sections: string[][]
+interface Action {
+  type: string
+  payload?: any
 }
 
-interface State {
-  letterGroups:
-}
-
-export default function reducer(state = initialState, action = {}) {
+export default function reducer(state: LogoState = initialState, action: Action): LogoState {
   switch (action.type) {
     case LOGO_INTERACTION:
 
-      const {index, states, sections} = state.letterGroups;
+      const { index, states, sections } = state.letterGroups;
       const nextIndex = index >= states.length -1
         ? 0
         : index + 1;
@@ -44,7 +51,9 @@ export default function reducer(state = initialState, action = {}) {
   }
 }
 
-export function updateSections() {
+type LogoActionTypes = Action;
+
+export function updateSections(): LogoActionTypes {
   return {
     type: LOGO_INTERACTION,
   }

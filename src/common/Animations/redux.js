@@ -1,7 +1,11 @@
 const  ANIMATION_STARTED = key =>  `animations/${key}/ANIMATION_STARTED`;
 const  ANIMATION_STOPPED = key => `animations/${key}/ANIMATION_STOPPED`;
 
-const initialState = { };
+interface RotationState {
+  [key: string]: boolean;
+}
+
+const initialState: RotationState = { };
 
 export default function reducer(state = initialState, action = {}) {
   const { key } = action.payload || { key: '' };

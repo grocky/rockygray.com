@@ -7,8 +7,7 @@ import configureStore from './rootRedux';
 
 import './index.css'
 
-const preLoadedState = {};
-const store = configureStore(preLoadedState);
+const store = configureStore();
 
 render(
   <Provider store={store}>

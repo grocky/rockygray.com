@@ -1,23 +1,24 @@
-
 {
     "masterPicture": "public/img/logo.svg",
-    "iconsPath": "/",
+    "iconsPath": "public/",
     "design": {
         "ios": {
             "pictureAspect": "backgroundAndMargin",
             "backgroundColor": "#ffffff",
-            "margin": "7%",
+            "margin": "14%",
             "assets": {
                 "ios6AndPriorIcons": false,
                 "ios7AndLaterIcons": false,
-                "precomposedIcons": true,
+                "precomposedIcons": false,
                 "declareOnlyDefaultIcon": true
             }
         },
-        "desktopBrowser": {},
+        "desktopBrowser": {
+            "design": "raw"
+        },
         "windows": {
             "pictureAspect": "whiteSilhouette",
-            "backgroundColor": "#da532c",
+            "backgroundColor": "#b91d47",
             "onConflict": "override",
             "assets": {
                 "windows80Ie10Tile": false,
@@ -30,9 +31,7 @@
             }
         },
         "androidChrome": {
-            "pictureAspect": "backgroundAndMargin",
-            "margin": "13%",
-            "backgroundColor": "#ffffff",
+            "pictureAspect": "shadow",
             "themeColor": "#ffffff",
             "manifest": {
                 "name": "RockyGray",
@@ -48,12 +47,14 @@
         },
         "safariPinnedTab": {
             "pictureAspect": "silhouette",
-            "themeColor": "#5bbad5"
+            "themeColor": "#b91d47"
         }
     },
     "settings": {
         "scalingAlgorithm": "Mitchell",
-        "errorOnImageTooSmall": false
+        "errorOnImageTooSmall": false,
+        "readmeFile": false,
+        "htmlCodeFile": false,
+        "usePathAsIs": false
     }
 }
-
