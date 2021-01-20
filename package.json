@@ -14,7 +14,7 @@
     "svg:min": "svgo --disable=cleanupIDs"
   },
   "dependencies": {
-    "gsap": "2.0.2",
+    "gsap": "3.6.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
     "react-redux": "5.1.0",
