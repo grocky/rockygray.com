@@ -14,9 +14,10 @@
     "svg:min": "svgo --disable=cleanupIDs"
   },
   "dependencies": {
-    "gsap": "2.0.2",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "@babel/core": "7.27.1",
+    "gsap": "3.13.0",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "react-redux": "5.1.0",
     "redux": "4.0.1"
   },
@@ -24,12 +25,13 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "babel-eslint": "10.1.0",
     "chai": "3.5.0",
-    "cli-real-favicon": "0.0.8",
-    "mocha": "8.1.1",
-    "react-scripts": "3.4.3",
+    "cli-real-favicon": "0.0.6",
+    "mocha": "8.4.0",
+    "react-scripts": "5.0.1",
     "sinon": "1.17.5",
-    "svgo": "1.2.2"
+    "svgo": "3.3.2"
   },
   "browserslist": [
     ">0.2%",

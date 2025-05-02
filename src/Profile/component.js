@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './Profile.css'
-import headShot from './headshot_450.jpg'
+import headShot from './headshot.png'
 import ProfilePicture from './ProfilePicture';
 import LogoContainer from '../common/Logo/LogoContainer';
 import SocialList from '../common/SocialLinks/SocialList';
