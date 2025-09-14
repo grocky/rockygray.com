@@ -70,25 +70,25 @@ export default function LandingPage(): React.JSX.Element {
       title: "Poker Ledger (Web App)",
       tech: "React · Go · MySQL · Tailwind",
       desc: "App for poker hosts to manage buy-ins/cash-outs with transactional-outbox and DDD patterns.",
-      link: "#",
-    },
-    {
-      title: "Ads API Platform — Portfolio",
-      tech: "Go · Gateway · Service Config · Reliability",
-      desc: "Select initiatives: rate-limit redesign, gateway validation, system users decoupling.",
-      link: "#",
+      link: "https://www.pokerledger.club",
     },
     {
       title: "Community Leadership",
-      tech: "Youth Sports · Poker Club",
-      desc: "League director roles, playoff operations, and community-building events in NoVA.",
+      tech: "Burke Basketball",
+      desc: "Boys commisioner overeeing 8-10 youth leagues from grade 3 through high school.",
       link: "#",
+    },
+    {
+      title: "Northern Virginia Poker Club",
+      tech: "Poker Club",
+      desc: "Organizer and host of monthly poker games in Northern Virginia since 2021.",
+      link: "https://northernvirginiapoker.club",
     },
   ];
 
   const posts: Post[] = [
-    { title: "Designing APIs that Scale with Teams", href: "https://blog.rockygray.com", date: "(sample)" },
-    { title: "Transactional Outbox in Practice", href: "https://blog.rockygray.com", date: "(sample)" },
+    { title: "Mice Detetion in Go Using OpenCV and MachineBox", href: "https://blog.rockygray.com/posts/mouse-detective/", date: "June 8, 2020" },
+    { title: "Refactoring is good for your code and databases too!", href: "https://blog.rockygray.com/posts/database-refactoring/", date: "May 20, 2019" },
   ];
 
   return (
@@ -148,7 +148,7 @@ export default function LandingPage(): React.JSX.Element {
             <ul className="mt-6 space-y-2 text-slate-700">
               <li className="flex gap-2"><Briefcase className="w-5 h-5 mt-0.5 text-slate-500" /> Engineering Manager, Ads API Platform — Reddit</li>
               <li className="flex gap-2"><Code2 className="w-5 h-5 mt-0.5 text-slate-500" /> Strengths: DDD, OLEP, transactional outbox, reliability and API governance</li>
-              <li className="flex gap-2"><PenTool className="w-5 h-5 mt-0.5 text-slate-500" /> Community: Poker meetups, league director for youth basketball</li>
+              <li className="flex gap-2"><PenTool className="w-5 h-5 mt-0.5 text-slate-500" /> Community: Commisioner for youth basketball and poker organizer</li>
             </ul>
           </div>
           <div className="md:col-span-1">
@@ -197,7 +197,7 @@ export default function LandingPage(): React.JSX.Element {
       <section id="projects" className="mx-auto max-w-6xl px-4 py-16">
         <div className="flex items-end justify-between gap-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Projects & Ventures</h2>
-          <button className="text-sm text-slate-600 hover:text-slate-900">View all</button>
+          {/* <button className="text-sm text-slate-600 hover:text-slate-900">View all</button> */}
         </div>
         <div className="mt-8 grid md:grid-cols-3 gap-6">
           {projects.map((p, i) => (
@@ -241,16 +241,16 @@ export default function LandingPage(): React.JSX.Element {
           <h2 className="text-2xl md:text-3xl font-semibold">Let's connect</h2>
           <p className="mt-3 max-w-2xl text-slate-700">Open to advising, speaking, and collaborations around platform engineering, API ecosystems, and community building.</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="mailto:hello@rockygray.com" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"><Mail className="w-4 h-4" /> Email</a>
-            <a href="https://www.linkedin.com/in/rockygray" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"><Linkedin className="w-4 h-4" /> LinkedIn</a>
-            <a href="https://github.com/rockygray" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"><Github className="w-4 h-4" /> GitHub</a>
+            <a href="mailto:rocky.grayjr@gmail.com" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"><Mail className="w-4 h-4" /> Email</a>
+            <a href="https://www.linkedin.com/in/grocky" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"><Linkedin className="w-4 h-4" /> LinkedIn</a>
+            <a href="https://github.com/grocky" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm hover:bg-slate-50"><Github className="w-4 h-4" /> GitHub</a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="py-10 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} Rocky Gray — Built with React & Tailwind
+        © {new Date().getFullYear()} Rocky Gray — <a href="https://github.com/grocky/rockygray.com">Built</a> with React & Tailwind
       </footer>
     </div>
   );
