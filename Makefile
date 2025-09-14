@@ -19,8 +19,11 @@ infra-plan: ## See terraform plan
 infra-apply: ## Apply terraform
 	cd infrastructure; terraform apply
 
+node_modules: package.json package-lock.json
+	npm install
+
 .PHONY=start
-start: ## Start the dev server
+start: node_modules ## Start the dev server
 	npm run start
 
 clean: ## Cleanup the application
