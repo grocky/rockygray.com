@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Mail, Linkedin, Github, ExternalLink, FileText, ArrowRight, Award, Trophy, Briefcase, Code2, PenTool } from "lucide-react";
+import Logo from "./Logo";
 
 interface NavItem {
   id: string;
@@ -96,7 +97,13 @@ export default function LandingPage(): React.JSX.Element {
       {/* Top Nav */}
       <header className="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
         <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-          <a href="#home" className="font-semibold text-lg">Rocky Gray</a>
+          <a href="#home" className="flex items-center gap-3 font-semibold text-lg">
+            <Logo
+              containerClass="w-8 h-12"
+              fillColor="#991D20"
+            />
+            Rocky Gray
+          </a>
           <nav className="hidden md:flex gap-6 text-sm">
             {nav.map((n) => (
               <a key={n.id} href={`#${n.id}`} className="hover:text-slate-700 text-slate-600">{n.label}</a>
@@ -106,7 +113,7 @@ export default function LandingPage(): React.JSX.Element {
             <a href="https://resume.rockygray.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 px-3 py-1.5 text-sm hover:bg-slate-50">
               <FileText className="w-4 h-4" /> Resume
             </a>
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-3 py-1.5 text-sm hover:bg-slate-800">
+            <a href="#contact" className="inline-flex items-center gap-2 rounded-xl text-white px-3 py-1.5 text-sm hover:opacity-90" style={{backgroundColor: '#991D20'}}>
               Contact <ArrowRight className="w-4 h-4" />
             </a>
           </div>
@@ -126,7 +133,7 @@ export default function LandingPage(): React.JSX.Element {
               Engineering Manager at Reddit. I design reliable systems, lead platform programs for the Ads API, and foster communities around technology, poker, and youth sports.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="https://resume.rockygray.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl bg-slate-900 text-white px-5 py-2.5 text-sm hover:bg-slate-800">
+              <a href="https://resume.rockygray.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-2xl text-white px-5 py-2.5 text-sm hover:opacity-90" style={{backgroundColor: '#991D20'}}>
                 View Resume <ExternalLink className="w-4 h-4" />
               </a>
               <a href="#projects" className="inline-flex items-center gap-2 rounded-2xl border border-slate-300 px-5 py-2.5 text-sm hover:bg-slate-50">
@@ -250,7 +257,7 @@ export default function LandingPage(): React.JSX.Element {
 
       {/* Footer */}
       <footer className="py-10 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} Rocky Gray — <a href="https://github.com/grocky/rockygray.com">Built</a> with React & Tailwind
+        &copy; {new Date().getFullYear()} Rocky Gray — <a className="text-slate-600 underline" href="https://github.com/grocky/rockygray.com">Built</a> with React & Tailwind
       </footer>
     </div>
   );
