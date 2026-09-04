@@ -16,6 +16,12 @@ export default function Projects(): React.JSX.Element {
       link: "https://www.pokerledger.club",
     },
     {
+      title: "Wi-Fi Sign Generator",
+      tech: "Go · WebAssembly · SVG · Cloudflare Pages",
+      desc: "Client-side app that generates printable Wi-Fi QR code signs with customizable colors, text, and logos. Passwords never leave the browser.",
+      link: "https://wifi-signs.grocky.net",
+    },
+    {
       title: "Community Leadership",
       tech: "Burke Basketball",
       desc: "Boys commisioner overeeing 8-10 youth leagues from grade 3 through high school.",
