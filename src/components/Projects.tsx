@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface Project {
   title: string;
@@ -25,14 +25,14 @@ export default function Projects(): React.JSX.Element {
       title: "Community Leadership",
       tech: "Burke Basketball",
       desc: "Boys commisioner overeeing 8-10 youth leagues from grade 3 through high school.",
-      link: "#",
+      link: "https://www.burkebasketball.org",
     },
-    {
-      title: "Northern Virginia Poker Club",
-      tech: "Poker Club",
-      desc: "Organizer and host of monthly poker games in Northern Virginia since 2021.",
-      link: "https://northernvirginiapoker.club",
-    },
+    // {
+    //   title: "Northern Virginia Poker Club",
+    //   tech: "Poker Club",
+    //   desc: "Organizer and host of monthly poker games in Northern Virginia since 2021.",
+    //   link: "https://northernvirginiapoker.club",
+    // },
   ];
 
   return (
@@ -42,17 +42,20 @@ export default function Projects(): React.JSX.Element {
       </div>
       <div className="mt-8 grid md:grid-cols-3 gap-6">
         {projects.map((p, i) => (
-          <div key={i} className="group rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition">
+          <a
+            key={i}
+            href={p.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block rounded-2xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition"
+          >
             <div className="flex items-center justify-between">
               <h3 className="font-medium">{p.title}</h3>
               <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-0.5 transition" />
             </div>
             <p className="mt-2 text-xs uppercase tracking-wide text-slate-500">{p.tech}</p>
             <p className="mt-3 text-sm text-slate-700">{p.desc}</p>
-            <div className="mt-4">
-              <a href={p.link} className="text-sm text-slate-700 hover:text-slate-900 inline-flex items-center gap-1">Learn more <ExternalLink className="w-3 h-3" /></a>
-            </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>
